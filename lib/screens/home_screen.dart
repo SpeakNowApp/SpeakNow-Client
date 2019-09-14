@@ -18,13 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("SpeakNow App"),
         backgroundColor: Colors.redAccent,
       ),
-        backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 50.0),
-            SizedBox(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 50.0),
+              SizedBox(
                 height: 250.0,
                 child: Carousel(
                   images: [
@@ -32,37 +32,37 @@ class _HomeScreenState extends State<HomeScreen> {
                     NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
                     NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),                  ],
                 ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                "Translation: HI",
-                style: TextStyle(
-                  fontSize: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  "Translation: HI",
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
                 ),
               ),
-            ),
+              DropdownButton<String>(
 
-            DropdownButton<String>(
-              items: _languages.map((String dropDownStringItem) {
-                return DropdownMenuItem<String>(
-                  value: dropDownStringItem,
-                  child: Text(dropDownStringItem),
-                );
-              }).toList(),
+                items: _languages.map((String dropDownStringItem) {
+                  return DropdownMenuItem<String>(
+                    value: dropDownStringItem,
+                    child: Text(dropDownStringItem),
+                  );
+                }).toList(),
 
-              onChanged: (String newValueSelected) {
-                // Your code to execute, when a menu item is selected from drop down
-                _onDropDownItemSelected(newValueSelected);
-              },
+                onChanged: (String newValueSelected) {
+                  // Your code to execute, when a menu item is selected from drop down
+                  _onDropDownItemSelected(newValueSelected);
+                },
 
-              value: _currentItemSelected,
+                value: _currentItemSelected,
 
-            ),
-          ],
-        )
+              ),
+            ],
+          )
       ),
-      );
+    );
   }
 
   void _onDropDownItemSelected(String newValueSelected) {
