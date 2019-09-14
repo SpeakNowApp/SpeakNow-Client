@@ -32,29 +32,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
               ],
             ),
-<<<<<<< HEAD
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Text("Translation: HI"),
+            child: Text(
+              "Translation: HI",
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
           )
         ],
       )),
     );
-=======
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                "Translation: HI",
-                style: TextStyle(
-                  fontSize: 30,
-                ),
-              ),
-            )
-          ],
-        )
-      ),
-      );
->>>>>>> 28081f5b03d193bfde7e9b494524691cacbd357a
   }
 }
