@@ -7,6 +7,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  var _languages = ['English', 'French', 'Spanish'];
+  var _currentItemSelected = 'English';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +41,34 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 30,
                 ),
               ),
-            )
+            ),
+
+            DropdownButton<String>(
+              items: _languages.map((String dropDownStringItem) {
+                return DropdownMenuItem<String>(
+                  value: dropDownStringItem,
+                  child: Text(dropDownStringItem),
+                );
+              }).toList(),
+
+              onChanged: (String newValueSelected) {
+                // Your code to execute, when a menu item is selected from drop down
+                _onDropDownItemSelected(newValueSelected);
+              },
+
+              value: _currentItemSelected,
+
+            ),
           ],
         )
       ),
       );
   }
+
+  void _onDropDownItemSelected(String newValueSelected) {
+    setState(() {
+      this._currentItemSelected = newValueSelected;
+    });
+  }
+
 }
