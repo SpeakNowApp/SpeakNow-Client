@@ -36,28 +36,31 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
-                  "Translation: HI",
+                  "Translation: INSERT HERE",
                   style: TextStyle(
                     fontSize: 30,
                   ),
                 ),
               ),
-              DropdownButton<String>(
 
-                items: _languages.map((String dropDownStringItem) {
-                  return DropdownMenuItem<String>(
-                    value: dropDownStringItem,
-                    child: Text(dropDownStringItem),
-                  );
-                }).toList(),
+              Center(
+                child: DropdownButton<String>(
 
-                onChanged: (String newValueSelected) {
-                  // Your code to execute, when a menu item is selected from drop down
-                  _onDropDownItemSelected(newValueSelected);
-                },
+                  items: _languages.map((String dropDownStringItem) {
+                    return DropdownMenuItem<String>(
+                      value: dropDownStringItem,
+                      child: Text(dropDownStringItem),
+                    );
+                  }).toList(),
 
-                value: _currentItemSelected,
+                  onChanged: (String newValueSelected) {
+                    // Your code to execute, when a menu item is selected from drop down
+                    _onDropDownItemSelected(newValueSelected);
+                  },
 
+                  value: _currentItemSelected,
+
+                ),
               ),
             ],
           )
