@@ -32,7 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                "Translation: HI"
+                "Translation: HI",
+                style: TextStyle(
+                  fontSize: 30,
+                ),
               ),
             )
           ],
