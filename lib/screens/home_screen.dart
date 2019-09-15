@@ -146,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           new InkWell(
-              child: new Text('Open Browser'),
+              child: new Text('Recalculate'),
               onTap: () => launch('https://scarger.github.io/adjustments.html')
           ),
         ],
