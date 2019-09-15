@@ -86,6 +86,19 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     currImages = genImages(text);
+    CollectionReference reference = Firestore.instance.collection('planets');
+    reference.snapshots().listen((querySnapshot) {
+      querySnapshot.documentChanges.forEach((change) async {
+        var googleTranslator = translator.GoogleTranslator();
+        var translation = await googleTranslator.translate(text,
+            to: _languages[_currentItemSelected]);
+        setState(() {
+          text = change.document.data['message'];
+          currImages = genImages(text);
+          translatedText = translation;
+        });
+      });
+    });
   }
 
   @override
