@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:translator/translator.dart' as translator;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -143,6 +144,10 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               value: _currentItemSelected,
             ),
+          ),
+          new InkWell(
+              child: new Text('Open Browser'),
+              onTap: () => launch('https://docs.flutter.io/flutter/services/UrlLauncher-class.html')
           ),
         ],
       )),
