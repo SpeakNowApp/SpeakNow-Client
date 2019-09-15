@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           new InkWell(
               child: new Text('Open Browser'),
-              onTap: () => launch('https://docs.flutter.io/flutter/services/UrlLauncher-class.html')
+              onTap: () => launch('https://scarger.github.io/adjustments.html')
           ),
         ],
       )),
